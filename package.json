@@ -1,0 +1,23 @@
+{
+  "name": "xg-command-freepack",
+  "version": "0.0.0",
+  "description": "xg tag pulgin, for use freepack.",
+  "main": "index.js",
+  "scripts": {
+    "release": "./build/release.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgfe/xg-command-freepack.git"
+  },
+  "author": "xgfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xgfe/xg-command-freepack/issues"
+  },
+  "homepage": "https://github.com/xgfe/xg-command-freepack#readme",
+  "dependencies": {
+    "freepack": "0.x",
+    "shelljs": "^0.8.2"
+  }
+}
