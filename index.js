@@ -23,12 +23,16 @@ exports.run = function(argv, cli, env) {
     return cli.help(exports.name, exports.options);
   }
 
-  switch (argv['_'][1]) {
-    case 'init':
-      return run.init(argv, cli, env);
-    case 'env':
-      return run.env(argv, cli, env);
-    default:
-      return run(argv, cli, env);
+  if (argv['_'][1]) {
+    switch (argv['_'][1]) {
+      case 'init':
+        return run.init(argv, cli, env);
+      case 'env':
+        return run.env(argv, cli, env);
+      default:
+        return fis.log.error('invalid command');
+    }
   }
+
+  return run(argv, cli, env);
 };
