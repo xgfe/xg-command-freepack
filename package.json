@@ -1,6 +1,6 @@
 {
   "name": "xg-command-freepack",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "xg tag pulgin, for use freepack.",
   "main": "index.js",
   "scripts": {
