@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/xgfe/xg-command-freepack#readme",
   "dependencies": {
-    "freepack": "0.x",
+    "freepack": "^0.1.0",
     "shelljs": "^0.8.2"
   }
 }

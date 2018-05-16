@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
+const version = require('./package.json').version;
 
 const run = require('./lib/run');
 
@@ -10,10 +11,11 @@ exports.desc = 'xg freepack pulgin, using freepack';
 exports.options = {
   'init': 'create freepack.config.js file',
   'env <config>': 'stringify env.config.json file',
+  'test [--module-coverage]': 'test rules',
+  'diff': 'show changes between previous version',
   '-c <config>': 'path of the config file',
   '-e --env <ENV_NAME>': 'pack env name, default FREEPACK',
-  // '-d --diff': 'show changes between previous version',
-  // '-t --test': 'test rules',
+  '-v --version': 'version',
   '-h, --help': 'print this help message'
 };
 
@@ -23,15 +25,18 @@ exports.run = function(argv, cli, env) {
     return cli.help(exports.name, exports.options);
   }
 
-  if (argv['_'][1]) {
-    switch (argv['_'][1]) {
-      case 'init':
-        return run.init(argv, cli, env);
-      case 'env':
-        return run.env(argv, cli, env);
-      default:
-        return fis.log.error('invalid command');
-    }
+  if (argv.v || argv.version) {
+    return console.log(`freepack version ${version}`);
+  }
+
+  fis.log.info(`freepack@v${version}`);
+
+  const command = argv['_'][1];
+  if (command) {
+    // init, env, test
+    return typeof run[command] === 'function'
+      ? run[command](argv, cli, env)
+      : fis.log.error('invalid command');
   }
 
   return run(argv, cli, env);
