@@ -8,11 +8,28 @@ xg freepack init # [Optional] Create freepack.config.js file
 xg freepack
 ```
 
-- `xg freepack init` **Create `freepack.config.js` file**
-- `xg freepack` **Main**
-- `xg freepack -d --diff` **Show changes between previous version**
-- `xg freepack -t --test` **Test rules**
-- `xg freepack -h --help` **More**
+### OPTIONS
+`xg freepack -c <config>`
+`xg freepack -e, --env <ENV_NAME>`
+`xg freepack -v, --version`
+`xg freepack -h, --help`
+
+**`xg freepack init`**
+**`xg freepack env <config>`**
+**`xg freepack test [--module-coverage]`**
+<!-- **`xg freepack diff`** -->
+
+
+## ENV (default FREEPACK)
+### String
+#### TAG
+v1.0.2:moduleA,moduleB
+
+#### BRANCH
+bBranch_name:moduleA,moduleB
+
+### JSON
+xg freepack env path/config.js
 
 ## freepack.config.js
 > [freepack config](https://github.com/xgfe/freepack)

@@ -15,8 +15,8 @@ exports.options = {
   'test [--module-coverage]': 'test rules',
   'diff': 'show changes between previous version',
   '-c <config>': 'path of the config file',
-  '-e --env <ENV_NAME>': 'pack env name, default FREEPACK',
-  '-v --version': 'version',
+  '-e, --env <ENV_NAME>': 'pack env name, default FREEPACK',
+  '-v, --version': 'version',
   '-h, --help': 'print this help message'
 };
 
