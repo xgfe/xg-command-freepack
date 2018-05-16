@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const freepack = require('freepack');
 const shell = require('shelljs');
 const version = require('./package.json').version;
 
@@ -26,10 +27,13 @@ exports.run = function(argv, cli, env) {
   }
 
   if (argv.v || argv.version) {
-    return console.log(`freepack version ${version}`);
+    console.log(`freepack version ${freepack.version}`);
+    console.log(`xg-command-freepack version ${version}`);
+    return;
   }
 
-  fis.log.info(`freepack@v${version}`);
+  fis.log.info(`freepack@v${freepack.version}`);
+  fis.log.info(`xg-command-freepack@v${version}`);
 
   const command = argv['_'][1];
   if (command) {
