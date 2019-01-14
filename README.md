@@ -1,5 +1,5 @@
 # xg-command-freepack
-xg tag pulgin, for use freepack.
+xg tag plugin, for use freepack.
 
 ## Usage
 ```shell
